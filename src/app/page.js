@@ -1,3 +1,13 @@
+// src/app/page.js
+import dynamic from "next/dynamic";
+
+const MapComponent = dynamic(() => import("./components/Map"), { ssr: false });
+
 export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <h1>Explore Your Route</h1>
+      <MapComponent />
+    </div>
+  );
 }
